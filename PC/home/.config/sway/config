@@ -63,8 +63,8 @@ bindsym $mod+Shift+e exec $HOME/.config/sway/exit.sh
 
 # Screen locking (automatic, with a timeout)
 exec swayidle -w \
-	timeout 10 'swaylock -f -c 550000' \
-	timeout 20 'swaymsg "output * dpms off"' \
+	timeout 300 'swaylock -f -c 550000' \
+	timeout 600 'swaymsg "output * dpms off"' \
 		resume 'swaymsg "output * dpms on"' \
 	before-sleep 'swaylock -f -c 055000'
 
@@ -119,12 +119,12 @@ set $ws4 "4 - Benq²"
 set $ws5 "5 - Asus²"
 set $ws6 "6 - Eizo²"
 
-workspace 1 output $Benq
-workspace 4 output $Benq
-workspace 2 output $Asus
-workspace 5 output $Asus
-workspace 3 output $Eizo
-workspace 6 output $Eizo
+workspace $ws1 output $Benq
+workspace $ws4 output $Benq
+workspace $ws2 output $Asus
+workspace $ws5 output $Asus
+workspace $ws3 output $Eizo
+workspace $ws6 output $Eizo
 
 # Move between workspaces
 bindsym $mod+1 workspace $ws1

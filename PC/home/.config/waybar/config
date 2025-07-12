@@ -10,7 +10,6 @@
         "sway/window"
     ],
     "modules-right": [
-        "custom/media",
 	    "idle_inhibitor",
         "pulseaudio",
         "network",
@@ -31,16 +30,6 @@
              "focused": "",
              "default": ""
          } 
-    },
-
-    "keyboard-state": {
-        "numlock": true,
-        "capslock": true,
-        "format": "{name} {icon}",
-        "format-icons": {
-            "locked": "",
-            "unlocked": ""
-        }
     },
 
     "sway/scratchpad": {
@@ -84,8 +73,7 @@
         "format-ethernet": "{ipaddr}/{cidr} ",
         "tooltip-format": "{ifname} via {gwaddr} ",
         "format-linked": "{ifname} (No IP)",
-        "format-disconnected": "Disconnected ⚠",
-        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+        "format-disconnected": "Disconnected ⚠"
     },
 
     "pulseaudio": {
