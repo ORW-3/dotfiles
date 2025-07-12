@@ -4,7 +4,6 @@
     min-height: 0;
     padding-bottom: 2px;
     padding-top: 2px;
-    background: transparent;
     color: #ffffff;
     opacity: 0.9;
     padding-left: 4px;
@@ -12,15 +11,12 @@
 }
 
 #idle_inhibitor.activated {
-    -gtk-icon-effect: dim;
-    background: #1f1f1f;
     color: #5c157c;
 }
 
 #clock {
     background: #1f1f1f;
     color: #ffffff;
-    opacity: 0.7;
     margin-right: 4px;
     padding: 2px 8px;
 }
@@ -79,6 +75,5 @@ window#waybar {
     background-color: #5c157c;
     border: 2px solid #5c157c;
     color: #000000;
-    font-size: 20px;
-    padding-left: 12px;
+    padding-left: 10px;
 }
