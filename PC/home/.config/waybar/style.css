@@ -4,26 +4,17 @@
     min-height: 0;
     padding-bottom: 2px;
     padding-top: 2px;
-}
-
-#cpu {
     background: transparent;
     color: #ffffff;
-    opacity: 0.7;
-    padding: 2px 8px;
-}
-
-#memory {
-    background: transparent;
-    color: #ffffff;
-    opacity: 0.7;
-    padding: 2px 8px;
+    opacity: 0.9;
+    padding-left: 4px;
+    padding-right: 4px;
 }
 
 #idle_inhibitor.activated {
     -gtk-icon-effect: dim;
     background: #1f1f1f;
-    color: #ca04c0;
+    color: #5c157c;
 }
 
 #clock {
@@ -31,13 +22,6 @@
     color: #ffffff;
     opacity: 0.7;
     margin-right: 4px;
-    padding: 2px 8px;
-}
-
-#network {
-    background: transparent;
-    color: #ffffff;
-    opacity: 0.7;
     padding: 2px 8px;
 }
 
@@ -71,14 +55,6 @@ window#waybar {
     transition-property: background-color;
 }
 
-#workspaces button:hover {
-    /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
-    background: @background;
-    border-bottom: 1px solid #ffffff;
-    box-shadow: inherit;
-    color: #ffffff;
-}
-
 #workspaces button {
     background: transparent;
     color: #ffffff;
@@ -88,33 +64,21 @@ window#waybar {
 }
 
 #workspaces button.focused {
-    background: #453e3d;
+    background: #5c157c;
     color: #ffffff;
-    opacity: 0.8;
+    opacity: 1;
 }
 
 #workspaces button.urgent {
     background-color: #eb4d4b;
 }
 
-#pulseaudio {
-    background: transparent;
-    color: #ffffff;
-    opacity: 0.7;
-    padding: 2px 8px;
-}
-
 /* Custom Stuff */
-#custom-audio {
-    background: transparent;
-    color: #ffffff;
-    opacity: 0.7;
-    padding: 2px 8px;
-}
-
 #custom-power {
-    background: #1f1f1f;
-    border: 1px solid #ca04c0;
-    color: #ca04c0;
-    padding-left: 8px;
+    background: #000000;
+    background-color: #5c157c;
+    border: 2px solid #5c157c;
+    color: #000000;
+    font-size: 20px;
+    padding-left: 12px;
 }
