@@ -120,6 +120,8 @@ setopt HIST_SAVE_NO_DUPS
 # Example aliases
 alias dnf="sudo dnf"
 alias docker="sudo docker"
+alias vi="nvim"
+alias vim="nvim"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
