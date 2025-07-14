@@ -1,45 +1,31 @@
 {
-    "height": 37, 
-    "spacing": 4, 
-    "modules-left": [
-        "sway/workspaces",
-        "sway/mode",
-        "sway/scratchpad"
-    ],
-    "modules-center": [
-        "sway/window"
-    ],
-    "modules-right": [
-	    "idle_inhibitor",
-        "pulseaudio",
-        "network",
-        "cpu",
-        "memory",
-        "clock",
-        "tray",
-        "custom/notification",
-	    "custom/power"
-    ],
-    "sway/workspaces": {
-        "disable-scroll": true,
-        "all-outputs": true,
-        "warp-on-scroll": false,
-        "format": "{name}:{icon}",
-        "format-icons": {
-             "urgent": "",
-             "focused": "",
-             "default": ""
-         } 
+    "layer": "top", 
+    "position": "top", 
+    "height": 40, 
+    "margin": "20 30 0 30",
+    "modules-left": ["sway/window", "sway/scratchpad", "clock"],
+    "modules-center": ["sway/workspaces", "idle_inhibitor"],
+    "modules-right": ["cpu", "memory", "pulseaudio", "network", "custom/notification","tray", "custom/power"],
+    "mode": {
     },
-
+     "sway/workspaces": {
+         "disable-scroll": true,
+         "disable-markup" : false
+	},
     "sway/scratchpad": {
         "format": "{icon} {count}",
         "show-empty": false,
         "format-icons": ["", ""],
         "tooltip": true,
         "tooltip-format": "{app}: {title}"
+    }, 
+    "sway/window": {
+    	"max-length": 50
     },
-
+    "sway/mode": {
+        "format": "<span style=\"italic\"><span color=\"#ff79c6\"></span>  {}</span>",
+        "tooltip": false
+    },
     "idle_inhibitor": {
         "format": "{icon}",
         "format-icons": {
@@ -47,27 +33,31 @@
             "deactivated": ""
         }
     },
-
     "tray": {
         "icon-size": 21,
         "spacing": 10
-     
     },
-
     "clock": {
-	    "interval": 30,
-	    "format": "{:%H:%M | %Y-%m-%d}",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+        "interval": 1,
+        "format": "<span color=\"#ff5555\"></span>  {:%H : %M : %S}",
+        "format-alt": "<span color=\"#bd93f9\"></span>   {:%d / %m / %Y}"
     },
-
+    "clock#time": {
+        "interval": 1,
+        "format": "{:%H:%M:%S}",
+        "tooltip": false
+    },
+    "clock#date": {
+      "interval": 10,
+      "format": "  {:%e %b %Y}",
+      "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+    },
     "cpu": {
-        "format": "{usage}% "
+        "format": "<span color=\"#f1fa8c\"></span>  {usage}%  ({load})"
     },
-
     "memory": {
         "format": "{}% "
     },
-
     "network": {
         "format-wifi": "{essid} ({signalStrength}%) ",
         "format-ethernet": "{ipaddr}/{cidr} ",
@@ -75,30 +65,17 @@
         "format-linked": "{ifname} (No IP)",
         "format-disconnected": "Disconnected ⚠"
     },
-
     "pulseaudio": {
-        "format": "{volume}% {icon} {format_source}",
-        "format-bluetooth": "{volume}% {icon} {format_source}",
-        "format-bluetooth-muted": " {icon} {format_source}",
-        "format-muted": " {format_source}",
-        "format-source": "{volume}% ",
-        "format-source-muted": "",
+        "format": "<span color=\"#8be9fd\">{icon}</span>  {volume}%",
+        "format-muted": "",
+        "format-icons": {
+            "headphones": "",
+            "handsfree": "",
+            "headset": "",
+            "default": ["", ""]
+        },
         "on-click": "pavucontrol"
     },
-
-    "custom/power": {
-        "format" : "⏻ ",
-		"tooltip": false,
-		"menu": "on-click",
-		"menu-file": "$HOME/.config/waybar/power_menu.xml", 
-		"menu-actions": {
-			"shutdown": "shutdown",
-			"reboot": "reboot",
-			"suspend": "systemctl suspend",
-			"hibernate": "systemctl hibernate"
-		}
-    },
-
     "custom/notification": {
         "tooltip": false,
         "format": "{icon}",
@@ -118,5 +95,17 @@
     "on-click": "swaync-client -t -sw",
     "on-click-right": "swaync-client -d -sw",
     "escape": true
+    },
+    "custom/power": {
+        "format" : "⏻ ",
+		"tooltip": false,
+		"menu": "on-click",
+		"menu-file": "$HOME/.config/waybar/power_menu.xml", 
+		"menu-actions": {
+			"shutdown": "shutdown",
+			"reboot": "reboot",
+			"suspend": "systemctl suspend",
+			"hibernate": "systemctl hibernate"
+		}
     }
 }
