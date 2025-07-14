@@ -53,7 +53,7 @@ exec swaync &
 # Set the modifier key to super:
 set $mod Mod4
 
-set $term foot
+set $term kitty
 bindsym $mod+Return exec $term
 
 # Set up a shortut to reload this config file:
