@@ -5,7 +5,7 @@
     "margin": "20 30 0 30",
     "modules-left": ["sway/window", "sway/scratchpad", "clock"],
     "modules-center": ["sway/workspaces", "idle_inhibitor"],
-    "modules-right": ["cpu", "memory", "pulseaudio", "network", "custom/notification","tray", "custom/power"],
+    "modules-right": ["cpu", "memory","custom/gpu", "pulseaudio", "network", "custom/notification","tray", "custom/power"],
     "mode": {
     },
      "sway/workspaces": {
@@ -40,7 +40,8 @@
     "clock": {
         "interval": 1,
         "format": "<span color=\"#ff5555\"></span>  {:%H : %M : %S}",
-        "format-alt": "<span color=\"#bd93f9\"></span>   {:%d / %m / %Y}"
+        "format-alt": "<span color=\"#bd93f9\"></span>   {:%d / %m / %Y}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
     },
     "clock#time": {
         "interval": 1,
@@ -49,14 +50,13 @@
     },
     "clock#date": {
       "interval": 10,
-      "format": "  {:%e %b %Y}",
-      "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+      "format": "  {:%e %b %Y}"
     },
     "cpu": {
-        "format": "<span color=\"#f1fa8c\"></span>  {usage}%  ({load})"
+        "format": "<span color=\"#f1fa8c\"></span>  {usage}% "
     },
     "memory": {
-        "format": "{}% "
+        "format": " {}%"
     },
     "network": {
         "format-wifi": "{essid} ({signalStrength}%) ",
@@ -69,9 +69,6 @@
         "format": "<span color=\"#8be9fd\">{icon}</span>  {volume}%",
         "format-muted": "",
         "format-icons": {
-            "headphones": "",
-            "handsfree": "",
-            "headset": "",
             "default": ["", ""]
         },
         "on-click": "pavucontrol"
@@ -80,9 +77,9 @@
         "tooltip": false,
         "format": "{icon}",
         "format-icons": {
-        "notification": "<span foreground='red'><sup></sup></span>",
+        "notification": "<span foreground='red'><sup>°</sup></span>",
         "none": "",
-        "dnd-notification": "<span foreground='red'><sup></sup></span>",
+        "dnd-notification": "<span foreground='red'><sup>°</sup></span>",
         "dnd-none": "",
         "inhibited-notification": "<span foreground='red'><sup></sup></span>",
         "inhibited-none": "",
@@ -107,5 +104,13 @@
 			"suspend": "systemctl suspend",
 			"hibernate": "systemctl hibernate"
 		}
+    },
+    "custom/gpu": {
+        "interval": 10,
+        "exec": "cat /sys/class/drm/card0/device/gpu_busy_percent",
+        "format" : "{icon} {text}%",
+		"tooltip": true,
+        "tooltip-format":"exec cat /sys/class/drm/card0/device/mem_busy_percent"
     }
+
 }

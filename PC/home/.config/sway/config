@@ -46,6 +46,7 @@ bar {
     swaybar_command waybar
 }
 
+exec swaync &
 #====================================#
 # Keyboard Shortcuts (Sway-specific) #
 #====================================#

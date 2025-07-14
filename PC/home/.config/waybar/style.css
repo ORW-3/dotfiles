@@ -51,7 +51,7 @@ window#waybar.hidden {
     margin: 0 10px 0 0;
 }
 
-#clock, #cpu, #memory, #network, #pulseaudio, #custom-media, #tray, #mode, #idle_inhibitor, #custom-notification, #scratchpad {
+#clock, #cpu, #memory, #network, #pulseaudio, #custom-media, #tray, #mode, #idle_inhibitor, #custom-notification, #scratchpad, #custom-gpu {
     padding: 0 15px;
     margin: 0 5px;
     background-color: #282a36;
