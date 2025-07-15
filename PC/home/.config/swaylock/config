@@ -2,15 +2,15 @@ ignore-empty-password
 
 color=1d1f21
 indicator-idle-visible
-indicator-radius=150
-indicator-thickness=30
+indicator-radius=250
+indicator-thickness=10
 
 inside-color=1d1f21
 inside-clear-color=1d1f21
 inside-ver-color=1d1f21
 inside-wrong-color=1d1f21
 
-key-hl-color=7aa6daaa
+key-hl-color=000000
 bs-hl-color=d54e53aa
 
 separator-color=55555555
@@ -24,7 +24,7 @@ text-caps-lock-color=f0c674
 text-ver-color=81a2be
 text-wrong-color=cc6666
 
-ring-color=81a2be55
+ring-color=ff79c6
 ring-ver-color=81a2be
 ring-clear-color=b5bd6811
 ring-wrong-color=cc6666
