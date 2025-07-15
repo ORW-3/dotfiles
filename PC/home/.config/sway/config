@@ -72,7 +72,7 @@ exec swayidle -w \
 
 # Screen locking (manual)
 set $lock_screen exec bash $HOME/.config/sway/lock_screen.sh
-bindsym $mod+Escape exec $lock_s
+bindsym $mod+Escape exec $lock_screen
 
 #========================================#
 # Keyboard Shortcuts (Window Management) #
