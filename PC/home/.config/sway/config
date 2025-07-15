@@ -47,6 +47,7 @@ bar {
 }
 
 exec swaync &
+exec systemctl --user import-environment DISPLAY
 #====================================#
 # Keyboard Shortcuts (Sway-specific) #
 #====================================#
@@ -71,8 +72,7 @@ exec swayidle -w \
 
 # Screen locking (manual)
 set $lock_screen exec bash $HOME/.config/sway/lock_screen.sh
-bindsym $mod+Escape exec $lock_screen
-
+bindsym $mod+Escape exec $lock_s
 
 #========================================#
 # Keyboard Shortcuts (Window Management) #
