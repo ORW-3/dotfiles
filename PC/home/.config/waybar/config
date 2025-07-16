@@ -106,11 +106,11 @@
 		}
     },
     "custom/gpu": {
-        "interval": 10,
-        "exec": "cat /sys/class/drm/card0/device/gpu_busy_percent",
-        "format" : "{icon} {text}%",
+        "interval": 5,
+        "exec": "python $HOME/.config/waybar/gpu_util.py",
+        "format" : "{text}",
 		"tooltip": true,
-        "tooltip-format":"exec cat /sys/class/drm/card0/device/mem_busy_percent"
+        "tooltip-format": "GPU | MEMORY | VRAM"
     }
 
 }
