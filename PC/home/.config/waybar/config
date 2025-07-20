@@ -106,8 +106,8 @@
 		}
     },
     "custom/gpu": {
-        "interval": 5,
-        "exec": "python $HOME/.config/waybar/gpu_util.py",
+        "interval": 2,
+        "exec": "$HOME/.config/waybar/gpu-check",
         "format" : "{text}",
 		"tooltip": true,
         "tooltip-format": "GPU | MEMORY | VRAM"

@@ -122,6 +122,23 @@ alias dnf="sudo dnf"
 alias docker="sudo docker"
 alias vi="nvim"
 alias vim="nvim"
+
+open_webui_start(){
+        docker run -d --network=host -v open-webui:/app/backend/data -e OLLAMA_BASE_URL=http://127.0.0.1:11434 --name open-webui --restart always ghcr.io/open-webui/open-webui
+}
+
+# stable diffusion container 
+# docker run -it --network=host --device=/dev/kfd --device=/dev/dri --group-add=video --ipc=host --cap-add=SYS_PTRACE --security-opt seccomp=unconfined -v $HOME/workspace/git/forge/stable-diffusion-webui-forge:/dockerx rocm/pytorch
+start_stable_diffusion(){
+        container=$(docker container list --all | grep pytorch | awk '{print $1}')
+        docker start $container
+        docker exec $container python /dockerx/launch.py   
+}
+
+stable_diffusion_stop(){
+        container=$(docker ps | grep pytorch | awk '{print $1}')
+        docker stop $container
+}
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
