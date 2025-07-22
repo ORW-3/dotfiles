@@ -16,7 +16,7 @@
 
 #outer-box {
 	margin: 5px; /* margin between the outer edges of the main window and its contents inside */
-	border: none /* border around all the internal window components */
+	border: none; /* border around all the internal window components */
 	background-color: #1f1f1f; /* background color of entire inner window */
 
 }
@@ -24,8 +24,8 @@
 #text {
 	margin: 5px;
 	border: none; /* border around each individual item within the search results */
-	background-color: trans; /* background behind each individual item within the search results */
-        color: ffffff;
+	background-color: transparent; /* background behind each individual item within the search results */
+        color: #ffffff;
 }
 
 /* Remove the search icon */
@@ -41,6 +41,6 @@
 
 window {
 	margin: 15px;
-	border: 3px solid green; /* border around the entire window */
+	border: 3px solid #ff79c6; /* border around the entire window */
 	background-color: #1f1f1f;
 }

@@ -39,7 +39,7 @@ gaps outer 3
 default_border pixel 2
 
 #====================================#
-# Activate the panel                 #
+# Autostart & Panel                  #
 #====================================#
 # Set the waybar command for the application launcher:
 bar {
@@ -48,6 +48,7 @@ bar {
 
 exec swaync &
 exec systemctl --user import-environment DISPLAY
+exec nextcloud &
 #====================================#
 # Keyboard Shortcuts (Sway-specific) #
 #====================================#
