@@ -1,9 +1,13 @@
 ignore-empty-password
 
+image=DP-2:/home/orw/workspace/git/sddm-astronaut-theme/Backgrounds/pixel_sakura_static.png
+scaling=fill
+
 color=1d1f21
-indicator-idle-visible
-indicator-radius=250
-indicator-thickness=10
+indicator-radius=60
+indicator-thickness=8
+indicator-y-position=405
+indicator-x-position=630
 
 inside-color=1d1f21
 inside-clear-color=1d1f21
