@@ -1,9 +1,9 @@
-allow_images=true
-image_size=64
-width=600
-height=200
+width=750
+height=450
 insensitive=true
-mode=drun,run
-columns=1
-padding:5
-lines=6
+mode=drun
+columns=2
+print_command=true
+term=kitty
+always_parse_args=true
+prompt=
