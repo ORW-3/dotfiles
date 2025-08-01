@@ -1,3 +1,4 @@
+allow_images=true
 width=750
 height=450
 insensitive=true
@@ -7,3 +8,4 @@ print_command=true
 term=kitty
 always_parse_args=true
 prompt=
+no_actions=true
