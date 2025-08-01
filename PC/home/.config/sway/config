@@ -17,21 +17,16 @@ output $Asus res 2650x1440 pos 3850 0
 # Appearance and Theming #
 #========================#
 # Declare Colors:
-set $background #332b2b
-set $color_urgent #fb4934
-set $text_color #ffffff
-set $title_bg_unfocused #666666
-set $title_outline_active #ca04c0
-set $title_outline_unfocused #332b2b
+include catppuccin-mocha
 
-# Set Colors:           Border                   Background          Text          Indicator             Child Border
-client.background       $background
-client.focused          $title_outline_active    $background         $text_color   $title_outline_active $title_outline_active
-client.focused_inactive $title_outline_unfocused $background         $text_color   $text_color           $title_outline_unfocused
-client.unfocused        $title_outline_unfocused $title_bg_unfocused $text_color   $title_outline_active
-client.urgent           $color_urgent            $color_urgent       $color_urgent $color_urgent         $color_urgent
+# target                 title     bg    text   indicator  border
+client.focused           $lavender $base $text  $rosewater $focused
+client.focused_inactive  $overlay0 $base $text  $rosewater $overlay0
+client.unfocused         $overlay0 $base $text  $rosewater $overlay0
+client.urgent            $peach    $base $peach $overlay0  $peach
+client.placeholder       $overlay0 $base $text  $overlay0  $overlay0
+client.background        $base
 
-# Add gaps in between all application windows:
 gaps inner 8
 gaps outer 3
 
