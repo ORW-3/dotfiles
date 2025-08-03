@@ -150,3 +150,5 @@ eval "$(atuin init zsh)"
 
 # ssh-agent eval 
 eval "$(ssh-agent)"
+
+bindkey -v
