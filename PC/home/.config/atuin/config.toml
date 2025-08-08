@@ -38,7 +38,7 @@
 
 ## which search mode to use
 ## possible values: prefix, fulltext, fuzzy, skim
-# search_mode = "fuzzy"
+search_mode = "fuzzy"
 
 ## which filter mode to use by default
 ## possible values: "global", "host", "session", "directory", "workspace"
@@ -65,7 +65,7 @@
 
 ## which style to use
 ## possible values: auto, full, compact
-# style = "auto"
+style = "auto"
 
 ## the maximum number of lines the interface should take up
 ## set it to 0 to always go full screen
@@ -76,7 +76,7 @@
 
 ## enable or disable showing a preview of the selected command
 ## useful when the command is longer than the terminal width and is cut off
-# show_preview = true
+show_preview = true
 
 ## what to do when the escape key is pressed when searching
 ## possible values: return-original, return-query
@@ -103,10 +103,15 @@
 ## with ^ or end with $, they'll match anywhere in the command.
 ## For details on the supported regular expression syntax, see
 ## https://docs.rs/regex/latest/regex/#syntax
-# history_filter = [
-#   "^secret-cmd",
-#   "^innocuous-cmd .*--secret=.+",
-# ]
+history_filter = [
+  # common linux 
+   "^cd|vi|ls|pwd|echo",
+  # file handling
+  "^touch|mkdir|rm|cp",
+  # misc 
+   "^watch|go run|git diff|ga |man",
+  "^clear|exit"
+ ]
 
 ## prevent commands run with cwd matching any of these regexes from being written
 ## to history. Note that these regular expressions are unanchored, i.e. if they don't
@@ -155,7 +160,7 @@ enter_accept = true
 ## keybinding is defined.  If this is set to "emacs", "vim-insert", or
 ## "vim-normal", the startup keymap mode in the Atuin search is forced to be
 ## the specified one.
-# keymap_mode = "auto"
+keymap_mode = "auto"
 
 ## Cursor style in each keymap mode.  If specified, the cursor style is changed
 ## in entering the cursor shape.  Available values are "default" and
@@ -174,31 +179,18 @@ enter_accept = true
 
 [stats]
 ## Set commands where we should consider the subcommand for statistics. Eg, kubectl get vs just kubectl
-# common_subcommands = [
-#   "apt",
-#   "cargo",
-#   "composer",
-#   "dnf",
-#   "docker",
-#   "git",
-#   "go",
-#   "ip",
-#   "jj",
-#   "kubectl",
-#   "nix",
-#   "nmcli",
-#   "npm",
-#   "pecl",
-#   "pnpm",
-#   "podman",
-#   "port",
-#   "systemctl",
-#   "tmux",
-#   "yarn",
-# ]
+common_subcommands = [
+    "dnf",
+    "docker",
+    "git",
+    "go",
+    "kubectl",
+    "nmcli",
+    "systemctl",
+]
 
 ## Set commands that should be totally stripped and ignored from stats
-# common_prefix = ["sudo"]
+common_prefix = ["sudo"]
 
 ## Set commands that will be completely ignored from stats
 # ignored_commands = [
