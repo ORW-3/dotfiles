@@ -3,7 +3,7 @@
     "position": "top", 
     "height": 40, 
     "margin": "20 30 0 30",
-    "modules-left": ["sway/window", "sway/scratchpad", "clock"],
+    "modules-left": ["clock", "sway/scratchpad"],
     "modules-center": ["sway/workspaces", "idle_inhibitor"],
     "modules-right": ["cpu", "memory","custom/gpu", "pulseaudio", "network", "custom/notification","tray", "custom/power"],
     "mode": {
