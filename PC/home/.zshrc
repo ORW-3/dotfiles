@@ -140,6 +140,9 @@ stable_diffusion_stop(){
         docker stop $container
 }
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+open_webui_start(){
+ docker run -d --network=host -v open-webui:/app/backend/data -e OLLAMA_BASE_URL=http://127.0.0.1:11434 --name open-webui --restart always ghcr.io/open-webui/open-webui 
+}
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
